@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js与HTML的结合方式练习</title>
+</head>
+<body>
+	<!-- 方法一：事件调用，方法写在事件当中 -->
+	<button onClick="alert('事件调用，方法写在事件当中')">按钮</button>
+	<br>
+	<!-- 方法二：写在函数里面调用 -->
+	<script type="text/javascript">
+		// 函数的第一种定义方式
+		function showAlert (){
+			alert("写在函数里面调")
+		}
+		showAlert();
+		
+		// 函数的第二种定义方式
+		var addAction = function(a,b){return a+b;}
+		alert(addAction(12,15));
+
+		// 函数的第三种定义方式(不推荐使用)
+		var addAction2 = new Function('a','b','return a+b');
+		alert(addAction2(1,2));
+
+		// js函数调用只认函数名，所以函数重载等都不会生效
+		// var addAction = new Function('a'，'return a');
+		// alert(addAction(100);
+
+		// 函数的劫持，类似函数的重写。这里我们重写了window的alert方法。
+		window.alert = function(x){
+			document.write(x);
+		}
+		alert('11111');
+	</script>
+	<!-- 方法三：外部调用方法 -->
+	<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
+

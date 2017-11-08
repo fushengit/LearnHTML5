@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>字符串对象的使用</title>
+	<script type="text/javascript">
+		/*
+			String对象的方法
+			1.big();
+			2.fontcolor();
+			3.substr();
+			4.substring();
+		*/
+
+		function bigFun(){
+			var p = document.getElementById("p");
+			var text = p.innerHTML;
+			p.innerHTML = text.big();
+		}
+
+		var colorArray = ["red","yellow","blue"];
+		function colorFun(){
+			var p = document.getElementById("p");
+			var text = p.innerText;
+			var index = Math.floor(Math.random()*colorArray.length);
+			p.innerHTML = text.fontcolor(colorArray[index]);
+		}
+		
+		//substring(a,b)  两个参数都表示下标
+
+		//substr(a,b)  两个参数，表示下标及长度
+		
+
+	</script>
+</head>
+<body>
+	<p id="p">大</p>	
+	<input type="button" value="变大" onclick="bigFun()">
+	<input type="button" value="变色" onclick="colorFun()">
+</body>
+</html>

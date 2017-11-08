@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>后代选择器练习</title>
+	<style>
+		.div-class li{
+			color: red;
+		}
+		#div-id li{
+			color: blue;
+		}
+		.div-class .p-class{
+			color: yellow;
+		}
+
+	</style>
+</head>
+<body>
+	<div class = "div-class">
+		<ul>
+			这是1个ul
+			<li>第1个li</li>
+			<li>第2个li</li>
+			<li>第3个li</li>
+		</ul>
+	</div>
+	<div id = "div-id">
+		<ul>
+			这也是2个ul
+			<li>li1</li>
+			<li>li2</li>
+			<li>li3</li>
+			<li>li4</li>
+		</ul>
+	</div>
+	
+	<div class = "div-class">
+		<p class = "p-class">这是一个p标签</p>
+	</div>
+
+</body>
+</html>
+
+后代选择器：从后往前查询，后面的选择器包含的标签的父标签拥有前面的选择器，全部满足的情况下即可渲染。后代选择器中的多个选择器使用空格隔开。
+
+
+
+
+
+
+

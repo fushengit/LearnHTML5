@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>全局函数练习</title>
+</head>
+<body>
+
+	<h1></h1>
+	<ol>
+		<li>isNan：</li>
+		<li>1.判断是否是一个数字</li>
+	</ol>
+
+	<ol>
+		<li>eval：</li>
+		<li>1.执行字符串，将结果转换成数字</li>
+		<li>2.将json字符串转换成json</li>
+	</ol>
+
+	<ol>
+		<li>escape：</li>
+		<li>编码</li>
+	</ol>
+
+	<ol>
+		<li>unescape：</li>
+		<li>解码</li>
+	</ol>
+
+	<ol>
+		<li>encodeURI:</li>
+		<li>对网址进行编码</li>
+	</ol>
+	
+	<ol>
+		<li>unencodeURI:</li>
+		<li>对网址进行解码</li>
+	</ol>
+
+
+	<script type='text/javascript'>
+		// alert('测试');
+
+		// isNaN:is no a number
+		document.write("isNaN:is no a number <br>")
+
+		var a = 12;
+		var result = isNaN(a);
+		document.write(a+'判断isNaN结果是：'+result+"<br>");
+
+
+		var b = 'b';
+		var result = isNaN(b);
+		document.write(b+'判断isNaN结果是：'+result+"<hr>");
+
+		document.write('字符串转数字 <br>');
+		var a1 = '12345';
+		var b1 = '54321';
+		document.write('字符串'+a1+'用parseInt转换成数：'+ parseInt(a1)+'<br>');
+		document.write('字符串'+a1+'用parseFloat转换成数：'+ parseFloat(a1)+'<br>');
+		document.write('字符串'+b1+'用parseInt转换成数：'+ parseInt(b1)+'<hr>');
+
+		document.write('eval可以直接将字符串转换成数字进行计算 <br>')
+		// alert(eval(a+a1));
+		// alert(eval(a1+b1));
+		// alert(eval(a)+eval(a1));
+		// alert(eval(b1)+eval(a1));
+
+		var city = '中国';
+		var escapeCity = escape(city);
+		var unescapeCity = unescape(escapeCity);
+		document.write(city+'escape:'+escapeCity+'<br>');
+		document.write(escapeCity+'unescape:'+unescapeCity+'<hr>');
+
+		var web = 'http://www.baidu.com?city=\'中国\''
+		var encodeCity = encodeURI(web);
+		document.write(web+'encodeURI:'+encodeCity+'<br>');
+		document.write(encodeCity+'decodeURI:'+decodeURI(encodeCity)+'<hr>');
+
+	</script>
+</body>
+</html>

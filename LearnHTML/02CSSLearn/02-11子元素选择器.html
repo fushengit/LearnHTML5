@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>子元素选择器练习</title>
+	<style>
+		div>h1{
+			color: red;
+		}
+		div>ul{
+			color: blue;
+		}
+		div>li{
+			color: gray;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<h1>这是一个h1标签</h1>
+		<ul>
+			这是一个ul
+			<li>第1个li</li>
+			<li>第2个li</li>
+			<li>第3个li</li>
+			<li>第4个li</li>
+			<li>第5个li</li>
+		</ul>
+	</div>
+</body>
+</html>
+
+子元素选择器只能作用到他的一级子代。多级子代是不会产生效果的

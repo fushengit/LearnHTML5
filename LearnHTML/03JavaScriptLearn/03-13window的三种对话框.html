@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>window的三种对话框</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		function func1(){
+			alert("alert弹框");
+		}
+		function func2(){
+			if (confirm("confirm弹框")==false) {
+				func2();
+			};
+		}
+		function func3(){
+			var txt = prompt("prompt弹框");
+			alert("您输入的是:"+txt);
+		}
+	</script>
+	
+	<input type="button" value = "alert弹框" onclick = "func1()">
+	<input type="button" value = "confrm弹框" onclick = "func2()">
+	<input type="button" value = "prompt弹框" onclick = "func3()">
+
+</body>
+</html>

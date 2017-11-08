@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>这是一个滚动标题</title>
+</head>
+<body onload='init()'>
+	<script type='text/javascript'>
+		function init(){
+			var title = document.title;
+			var titleArray = title.split('');
+			var first = titleArray.shift();
+			titleArray.push(first);
+			document.title = titleArray.join('');
+			setTimeout(init, 1);
+			// alert(titleArray);
+		}
+	</script>
+</body>
+</html>

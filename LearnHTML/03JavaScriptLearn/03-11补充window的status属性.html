@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>window的status属性</title>
+</head>
+<body onload = "init()">
+	<script type="text/javascript">
+		function init(){
+			var date = new Date;
+			var text = date.toLocaleString()
+			window.status = text;
+
+			setTimeout("init()",2000);
+			// alert(text);
+		}
+	</script>
+</body>
+</html>

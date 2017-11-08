@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组练习</title>
+</head>
+<body>
+
+	<h1>学习内容</h1>
+	<h2>1.数组的定义方式</h2>
+	<h2>2.数组的存储内容：没有类型（但是不推荐）</h2>
+	<h2>3.定义的数组都是可变数组，可以任意的变长数组</h2>
+	<h3>3.1指定长度 array.length = 100</h3>
+	<h3>3.2给指定位置赋值 array[100] = 100</h3>
+	<h2>4.二维数组的模拟</h2>	
+
+	<script type="text/javascript">
+		// 数组的创建方式一：
+		//创建一个空的数组
+		var arr1 = new Array();
+		//创建一个长度为4的数组
+		var arr2 = new Array(4);
+		//创建并初始化数组
+		var arr3 = new Array(1,'a',true);
+
+		//创建数组方式二(推荐)：
+		var arr4 = [];
+		var arr5 = [1,'2','a',true];
+
+		//数组的赋值
+		arr1[0] = 5;
+		arr1[10] = 10;
+
+		//二维数组的模拟
+		var arr9 = ["中国","美国"];
+		arr9["中国"] = ["北京","上海","武汉"];
+		alert(arr9["中国"][1]);   
+
+
+		/*
+			数组对象的方法
+			1.join();
+			2.push();
+			3.reverse();
+			4.shift();
+			5.sort();
+		*/
+		//join
+		alert(arr9.join()); //默认情况下使用逗号隔开每个数据
+		alert(arr9.join("--"));//使用--隔开每个数据
+
+		//push 添加一个
+		arr9.push("英国")
+		alert(arr9);
+
+		//shit 删除并返回第一个元素
+		arr9.shift()
+		alert(arr9);
+
+		//pop 删除最后一个
+		arr9.pop()  
+		alert(arr9);
+
+		//数组反序
+		var arr6 = [3,2,4,1,5];
+		var arr7 = arr6.reverse();
+
+		//sort
+		var arr8 = arr6.sort(function(i,j){
+			if (i*1<j*1) {
+				return 1;
+			}else{
+				return -1;
+			}
+		}) 
+		
+	</script>
+</body>
+</html>

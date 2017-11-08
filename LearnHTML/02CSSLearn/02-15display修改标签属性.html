@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> display修改标签属性</title>
+	<style>
+		/*p标签默认是块儿级标签，使用inline属性设置成为行内属性*/
+		p {
+			display: inline;
+		}
+		/*
+		strong 标签默认是行内的，使用block变成块儿级标签
+		并且该块儿级标签是可以设置长宽等属性的
+		*/
+		.strong-block{
+			display:block;
+			width: 500px;
+			height: 50px;
+		}
+		/*将a标签改成行内块标签，可设置长宽等属性*/
+		a {
+			display:inline-block;
+			width:50px;
+			height:100px;
+		}
+		/*将该标签冲页面删除*/
+		.display-none{
+			display:none;
+		}
+		/*隐藏标签但是原有的布局空着，注意区别上面选择器*/
+		.visibility-hidden{
+			visibility:hidden;
+		}
+	</style>
+</head>
+<body>
+	<span>这是1个span标签</span>
+	<p>这是一个p标签</p>
+	<span>这是2个span标签</span>
+	<hr>
+
+	<strong>这是1个strong标签</strong>
+	<strong class="strong-block">这是2个strong标签</strong>
+	<strong>这是3个strong标签</strong>
+	<hr>
+
+	<div>
+		<span>这是一个span标签</span>
+		<a href="http://www.baidu.com">这是百度的官网</a>
+		<span>这是一个span标签</span>
+	</div>
+	<hr>
+
+	<div>
+		<span>这是1个span</span>
+		<span class="display-none">这是2个span</span>
+		<span>这是3个span</span>
+		<span>这是4个span</span>
+	</div>
+	<hr>
+	<div>
+		<strong>这是第1个stong</strong>
+		<strong class="visibility-hidden">这是第2个stong</strong>
+		<strong>这是第3个stong</strong>
+	</div>
+</body>
+</html>

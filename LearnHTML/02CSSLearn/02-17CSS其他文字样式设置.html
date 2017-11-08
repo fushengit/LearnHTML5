@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>其他文字展示样式设置</title>
+	<style>
+
+		/*字间距设置，中英文都起作用*/
+		.pclass1 {
+			letter-spacing: 20px;
+		}
+		/*英文单词之间的空白*/
+		.pclass2 {
+			word-spacing: 100px;
+		}
+		/*文字带线的展示方式*/
+		.pclass3 {
+			text-decoration: overline;
+		}
+		.pclass4 {
+			text-decoration: underline;
+		}
+		.pclass5 {
+			text-decoration: line-through;
+		}
+		.pclass6 {
+			text-indent: 2em;
+		}
+		.pclass7 {
+			text-align: center;
+			background-color: blue;
+			color:white;
+		}
+
+		.pclass8 {
+			width: 50px;
+			height: 50px;
+			background-color: blue;
+			color:red;
+			white-space: nowrap; 
+		}
+		.pclass9 {
+			width: 50px;
+			height: 100px;
+			background-color: blue;
+			color:red;
+			white-space: normal; 
+		}
+		.pclass10 {
+			width: 50px;
+			height: 100px;
+			background-color: blue;
+			color:red;
+			white-space: pre; 
+		}
+
+		/*这里不知道为什么不支持word-break属性的设置*/
+		
+		.pclass11 {
+			width: 170px;
+			background-color: blue;
+			color:red;
+			word-break:normal;
+		}
+		.pclass12 {
+			width: 170px;
+			background-color: blue;
+			color:red;
+			word-break:keep-all;
+		}
+	</style>
+</head>
+<body>
+	<p class="pclass1">字间距letter-spacing: 20px</p-
+	<p class="pclass2">单词间的空白word spacing</p>
+	<p class="pclass3">text-decoration: overline</p>
+	<p class="pclass4">text-decoration: underline</p>
+	<p class="pclass5">text-decoration: line-through</p>
+	<p class="pclass6">首行缩进两个字符text-indent: 2em首行缩进首行缩进首行缩进首行缩进首行缩进首行缩进首行缩进首行缩进首行缩进首行缩进</p>
+	<p class="pclass7">文字左右居中对齐text-align: center</p>
+	<p class="pclass8">nowrap：及时超过盒子宽度也会继续显示</p>
+	<p class="pclass9">normal:默认文字会自动换行的</p>
+	<p class="pclass10">pre:文字想写成什么样的格式
+		           就会在浏览器上
+		显示什么格式</p>
+	<p class="pclass11">it is work break set normal show examble</p>
+	<p class="pclass12">it is work break set keep all show examble</p>
+</body>
+</html>

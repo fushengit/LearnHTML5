@@ -1,0 +1,138 @@
+一：JavaScript的概述
+	特点：交互性，安全性，跨平台性
+二：JavaScript与Java的不同
+	1.js基于对象，Java是面向对象
+	2.js只需要解释就可以执行，Java需要先编译后执行
+	3.js是弱类型，Java是强类型
+三：js的语言组成
+	ECMAScript+DOM+BOM
+四：js与HTML的结合方式
+	1.内部js程序，在HTML源码中。
+		1.1采用事件调用，代码写在字符串中
+		1.2采用函数的方式
+	2.外部js程序，在HTML中引入单独的js程序（注意：外部js的标签间不能编写js代码）
+五：js基本语法
+	=== 全等于 ,判断类型和内容
+六：js的数据类型
+	1. js和java一样存在两种数据类型：原始值（存储在栈Stack中简单数据），引用值（存储在堆heap中对象）
+	2. 5种原始数据类型：undefined，null，Boolean，number，string。
+	3. 可以通过typeof运算发查看变量类型
+	4. 所有的引用类型都是object类型
+	5. 通过instanceof运算符解决typeof对象类型判断问题
+	6. 区分undefined和null
+		undefined：变量定义了未初始化/访问对象不存在的属性
+		null：访问对象不存在
+	7.string比较特殊，使用new string（）则是引用类型，若使用string()或var str= "111" 则是原始数据类型。
+七：js常用对象
+	array：
+		new 的方式初始化
+			定义一个初始长度为0的数组
+			var arr = new Array();
+			定义一个初始长度为4的数组
+			var arr1 = new Array(4);
+			定义一个数组并且初始化
+			var arr2 = new Array(1,2,3,4,5)
+		[] 的方式初始化
+			var arr3 = [];
+			var arr4 = [1,2,3,4]
+		js中数组是没有类型的，意味着数组中是可以存放任意类型的
+			var arr5 = [1,"2",true,4.5]
+		js中的数组的长度是可以变化的
+			直接指定长度
+			arr4.length = 100;
+			给数组赋值，其他没有赋值的是undefined
+			arr5[100] = 100;
+		js中的数组的数据引用可以是任意对象(目的是为了模拟多维数组)
+			arr6 = ["中国","美国","日本"];
+			arr6["中国"] = ["北京","上海","武汉"];
+			alert(arr6["中国"][0]) 可以弹出来北京 
+		join：将数组用字符串输出
+		push: 添加一个元素到数组末尾
+		reverse：反转数组顺序
+		shift：删除并返回第一个元素
+		sort: 排序
+
+	string，number，Boolean，Math,Date,RegExp
+八：函数的定义
+	1. function add(a,b){
+			return a+b;
+	   }
+	2. var add = fuction(a,b){return a+b;}
+	3. var add = new Function('a','b','return a+b')  (不推荐使用)
+	4. 在js中，函数的唯一性是根据函数名来区别的，所以没有重载等功能，定义函数的时候不能重名！
+	5. 函数劫持：改变js的函数预定义好的功能（类似于重写）
+九：js全局函数
+	1. isNaN ：is not a number。
+		return true:不是数子
+		return false是数字
+	2. parseInt，parseFloat 解析字符串为整数/浮点数
+	3. eval 
+		3.1执行字符串，将结果转换为数字
+		3.2将json格式的字符串转换成json
+	4. escape与unescape, encodeURI()与decodeURI()
+十：练习
+	1.写一个滚动的标题栏
+十一：字符串对象
+十二：Math对象
+十三：Date对象
+十四：正则表达式
+
+十五：BOM：浏览器对象模型
+	BOM Window		
+		1.属性:
+			innerHeight:返回文档显示区的高度,IE不支持,用.body.clientWidth 
+			innerWidth:返回文档县市区的宽度用.body.clientHeight
+			outerHeight:包括了工具栏，菜单栏等高度
+			outerWidth:包括了滚动条等宽度
+			opener:是打开窗口的父窗口对象
+			parent:是打开窗口的父窗口对象。
+				2种情况下使用opener:
+				   1.使用winodw.open()方法打开的页面
+				   2.超链（里面的target属性要设置成_blank）
+				2种情况下使用parent:
+				   1.iframe 框架
+				   2.frame 框架
+	 		frames[]: 数组类型，代表子窗口的window对象的集合,可以通过frames[索引]拿到子窗口的window对象。
+			status:显示状态栏文本
+		2.模态窗体:窗体显示是不可点击窗体之外
+			window.showModalDialog("你好");  兼容性较差，不建议使用（可以使用open替换使用）
+		3.三种对话框
+			alert(); 消息框
+			confirm(); 确认框,返回是否确认
+			prompt();返回输入的字符串
+		4.常用事件
+			onmousemove:鼠标移动事件
+			onmouseover:鼠标的悬停
+			onmouserout:鼠标移出事件
+		5.close，open方法
+
+		6.对象计时器方法
+			setTimeout("func",time)：隔time秒执行func函数，返回一个计时器对象t,只调用一次
+
+			clearTimeout(t)：将setTimeout产生的计时器对象t销毁
+
+			setInterval("func",time)：每隔time秒执行func函数，返回一个计时器对象t,只调用多次
+
+			clearInterval(t):将setInterval产生的计时器对象t销毁
+			
+	BOM Nagigator	浏览器对象
+	BOM Screen		屏幕对象
+	BOM Histroy：存储了访问过的页面.并记录了访问的顺序
+		方法：
+			back()：返回上一个页面
+			forward()：前进一个页面
+			go(x); 以当前页面为准，前进x个页面
+
+	BOM Location：
+		属性：href
+		方法：reload
+		
+		
+
+
+
+
+
+
+
+
