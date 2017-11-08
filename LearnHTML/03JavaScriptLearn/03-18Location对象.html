@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>location对象</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function hrefAction(){
+			window.location.href = "03-16对象计时器方法.html";
+			// window.location = "03-17history相关方法/a.html";
+		}
+		function reloadAction(){
+			// alert("test");
+			window.location.href = window.location.href;
+		}
+	</script>
+	
+	<input type="button" value="hrefAction" onclick="hrefAction()">
+	<input type="button" value="reloadAction" onclick="reloadAction()">
+</body>
+</html>

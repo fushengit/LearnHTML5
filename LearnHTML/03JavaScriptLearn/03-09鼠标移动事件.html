@@ -8,6 +8,9 @@
 		div{
 			width: 300px;
 			height: 300px;
+			background-color: red;
+		}
+		.overClass {
 			background-color: blue;
 		}
 	</style>
@@ -15,14 +18,23 @@
 </head>
 <body>
 	<script type="text/javascript">
-		function func(e){
+		function moveAction(e){
 			var x = e.clientX;
 			var y = e.clientY;
 			var text = document.getElementById("txt");
 			text.value = x+":"+y;
 		}
+		function overAction(e){
+			var div = document.getElementById("divId");
+			div.className = "overClass";
+		}
+		function outAction(e){
+			var div = document.getElementById("divId");
+			div.className = "";
+		}
 	</script>
 	<input type="text" id="txt">；
-	<div onmousemove = "func(event)">鼠标的移动事件</div>
+	<div id ="divId" onmousemove = "moveAction(event)" onmouseover = "overAction(event)" onmouseout = "outAction(event)">鼠标的移动事件</div>
+	
 </body>
 </html>

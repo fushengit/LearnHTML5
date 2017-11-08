@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>对象的计时器方法</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var t1;
+		var t2;
+		function setTimeoutTest(){
+			t1 = setTimeout("changeTime()",1000);
+		}
+		function setIntervalTest(){
+			t2 = setInterval("changeTime()", 1000);
+		}
+		function clearTimeoutTest(){
+			clearTimeout(t1);
+		}
+		function clearIntervalTest(){
+			clearInterval(t2);
+		}
+		function changeTime(){
+			var date = new Date();
+			var localDate = date.toLocaleString()
+			var p = document.getElementById("pid");
+			p.innerHTML = localDate;
+		}
+
+	</script>
+	<p id="pid">时间展示</p>
+	<input type="button" value = "点击开始计时1一次" onclick = "setTimeoutTest()">
+	<input type="button" value = "点击开始连续计时" onclick = "setIntervalTest()">
+	<br>
+	<input type="button" value = "点击结束计时" onclick = "clearTimeoutTest()">
+	<input type="button" value = "点击结束连续计时" onclick = "clearIntervalTest()">
+</body>
+</html>
