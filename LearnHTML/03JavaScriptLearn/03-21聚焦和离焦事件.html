@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>聚焦离焦事件</title>
+	<style>
+		.focus{
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<script type="text/javascript">
+		//聚焦的时候将背景色变成红色
+		function onfocusAction(input){
+			input.className = "focus";
+		}
+		//离焦的时候恢复背景色
+		function onblurAction(input){
+			input.className = "";
+		}
+	</script>
+	<input type="text" onfocus="onfocusAction(this)" onblur="onblurAction(this)" placeholder="请输入">
+</body>
+</html>

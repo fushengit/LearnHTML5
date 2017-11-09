@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>使用js调用html和CSS</title>
+	<style>
+	</style>
+</head>
+<body>
+	<script type="text/javascript">
+		/*
+			使用js添加HTML代码，主要也是通过元素内的innerHTML来实现的，或者document.write("html代码");
+			其实质还是浏览器将文档解析成了元素。
+		*/
+
+		function addImage(){
+			var mydiv = document.getElementById("mydiv");
+			mydiv.innerHTML = "<img src='../01HTMLLearn/测试照片.png' alt='' style='width:200px; height:100px'>";
+		}
+
+		/*
+			使用js添加或者修改css样式
+			1.修改HTML的内行样式 修改style样式
+			2.通过修改id,class等方式，配合css修改
+		*/
+
+		function changeCSS(){
+			var mydiv = document.getElementById("mydiv");
+			mydiv.style = "background-color:blue"
+		}
+	</script>
+	<div id="mydiv" style="width:200px; height:200px; background-color:red">div元素</div>
+	<input type="button" value = "点击在div内添加图片" onclick="addImage()">
+	<br>
+	<input type="button" value = "修改div的背影颜色" onclick="changeCSS()">
+</body>
+</html>

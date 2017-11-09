@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>键盘事件</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		/*
+			这三个方法兼容性都不太好
+			经测试，在Chrome下，只有onkeydown可以使用
+		*/
+
+		//这个事件在用户按下任何键盘键
+		function onkeydownAction (e) {
+			alert("111")
+		}
+		//这个事件在用户放开任何键盘会相应
+		function onkeyup (e) {
+			alert("2222")
+
+		}
+		//这个事件在用户按下并放开任何字母数字键时发生
+		function onkeypressAction(e){
+			alert("3333")
+			// var myp = document.getElementById("myp");
+			// myp.innerText = event.keyCode;
+		}
+		//onkeydown="onkeydownAction(this)" onkeyup="onkeyupAction(this)"
+	</script>
+	<input style="width:200px; height:50px; background-color:red" onkeypress="onkeypressAction(this)" onkeydown="onkeydownAction(this)" onkeyup="onkeyupAction(this)>
+	<p id="myp"></p>
+</body>
+</html>

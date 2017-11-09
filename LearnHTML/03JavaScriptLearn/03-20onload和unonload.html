@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>onload和unonloud</title>
+</head>
+<body onload="onloadAction()" onunload="onunloadAction()">
+	<script type="text/javascript">
+		//body加载完成后执行onload方法
+		function onloadAction(){
+			alert("onload");
+		}
+		//body移除后执行 ,这个都销毁了就不能在执行别的HTML操作了。。
+		function onunloadAction(){
+			
+		}
+	</script>
+</body>
+</html>
