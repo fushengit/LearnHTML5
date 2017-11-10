@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>省市联动</title>
+</head>
+<body onload="init()">
+	<script type="text/javascript">
+		var arr = ["中国","美国","日本"] ;
+		  
+		  arr["中国"] = ["北京","上海","钓鱼岛"] ;
+		  arr["美国"] = ["纽约","华盛顿","旧金山"] ;
+		  arr["日本"] = ["东京","大阪","神户"] ;
+		
+		  arr["北京"] = ["海淀","朝阳","昌平","丰台"] ;
+		  arr["上海"] = ["浦东","金山","崇明","浦西"] ;
+		  arr["钓鱼岛"] = ["钓鱼岛东","钓鱼岛南","钓鱼岛西","钓鱼岛北"] ;
+
+		  arr["纽约"] = ["纽约1","纽约2","纽约3","纽约4"] ;
+		  arr["华盛顿"] = ["华盛顿1","华盛顿2","华盛顿3","华盛顿4"] ;
+		  arr["旧金山"] = ["旧金山1","旧金山2","旧金山3","旧金山4"] ;
+
+		  arr["东京"] = ["东京1","东京2","东京3","东京4"] ;
+		  arr["大阪"] = ["大阪1","大阪2","大阪3","大阪4"] ;
+		  arr["神户"] = ["神户1","神户2","神户3","神户4"] ;
+
+		function init () {
+			setOptions("country",arr);
+			var city = arr[0];
+			setOptions("city",arr[city]);
+			var area = arr[city][0];
+			setOptions("area",arr[area]);
+		}
+		function changeAction (sel) {
+			if (sel.name=="country") {
+				var city = sel.value
+				setOptions("city",arr[city]);
+				var area = arr[city][0];
+				setOptions("area",arr[area]);
+			}else if(sel.name=="city"){
+				var area = sel.value;
+				setOptions("area",arr[area]);
+			}
+		}
+		function setOptions(selName,arr){
+			var select = document.getElementsByName(selName)[0];
+			select.options.length=0;
+			for (var i = 0; i < arr.length; i++) {
+				var option = new Option(arr[i]);
+				option.className = selName;
+				select.options.add(option);
+			};	
+		}
+
+	</script>
+	国家: <select name="country" id="" onchange="changeAction(this)"></select>
+	<br>
+	城市: <select name="city" id="" onchange="changeAction(this)"></select>
+	<br>
+	地区: <select name="area" id="" onchange="changeAction(this)"></select>
+</body>
+</html>

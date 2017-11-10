@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单提交及表单清空</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function submitAction() {
+			var user = document.getElementById("username");
+			var pass = document.getElementById("password");
+			if (user.value=="") {
+				user.focus();
+				return false;
+			};
+			if (pass.value=="") {
+				pass.focus();
+				return false;
+			};
+			return true;
+		}
+		function resetAction () {
+			alert("登录成功!");
+			return true;
+		}
+	</script>
+
+	<form action="03-22键盘事件.html" onsubmit="return submitAction()" onreset="return resetAction">
+		账号：<input type="text" id="username">
+		<br>
+		密码: <input type="password" id="password">
+		<br>
+		<input type="submit" value="提交表单">
+		<br>
+		<input type="reset" value="清空表单">
+	</form>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>广告轮播图</title>
+	<style>
+		img{
+			width: 500px;
+			height: 300px;
+		}
+		div{
+			margin-top: -30px;
+		}
+		label{
+			background-color: gray;
+			display: inline-block;
+			width: 20px;
+			margin-left: 20px;
+			margin-right: 20px;
+		}
+		.selectLabel{
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body onload="start()">
+	<script type="text/javascript">
+		var n = 0;
+		var t ;
+		function start () {
+			n += 1;
+			if (n>=7) {
+				n=1
+			};
+			if (n<=0) {
+				n=7;
+			};
+			setCurrentImage(n);
+			t = setTimeout("start()",1000);
+		}
+		
+		function mouseoverAction (lab) {
+			clearTimeout(t);
+			setCurrentImage(lab.innerText);
+		}
+		function mouseoutAction (lab) {
+			n = parseInt(lab.innerText)-1;
+			start();
+		}
+		function setCurrentImage (index) {
+			document.getElementById("mImg").src = "../source/photo_0"+index+".jpg"
+			var labs = document.getElementById("labDiv").getElementsByTagName("label");
+			for (var i = 0; i < labs.length; i++) {
+				var lab =labs[i];
+				if (lab.innerText==index) {
+					lab.className = "selectLabel";
+				}else{
+					lab.className = "";
+				}
+			};			
+		}
+	</script>
+	<center>
+		<img src="../source/photo_01.jpg" alt="" id="mImg">
+		<div id="labDiv">
+			<label onmouseover="mouseoverAction(this)" onmouseout="mouseoutAction(this)">1</label>
+			<label onmouseover="mouseoverAction(this)" onmouseout="mouseoutAction(this)">2</label>
+			<label onmouseover="mouseoverAction(this)" onmouseout="mouseoutAction(this)">3</label>
+			<label onmouseover="mouseoverAction(this)" onmouseout="mouseoutAction(this)">4</label>
+			<label onmouseover="mouseoverAction(this)" onmouseout="mouseoutAction(this)">5</label>
+			<label onmouseover="mouseoverAction(this)" onmouseout="mouseoutAction(this)">6</label>
+		</div>		
+	</center>
+</body>
+</html>
