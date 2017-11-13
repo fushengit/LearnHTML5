@@ -148,3 +148,75 @@
 	 document.images[1]:文档的第1个image元素
 	 4.练习滚动轮播图
 
+二六：DOM技术
+	DOM节点的属性：
+		nodeName
+			元素节点是标签的名字
+			属性节点是属性的名字
+			文本节点是#text
+			文档节点是#document
+		nodeValue
+			文本节点是文字
+			属性节点是属性的值
+			元素节点和文档节点不可用
+		nodeType
+			元素：1
+			属性：2
+			注释：3
+			文档：4
+	DOM节点的导航
+		parentNode
+		childNodes
+		firstChild
+		lastChild
+		nextSibling
+		previousSibling
+	
+	获取去标签节点对象的方法：
+		1.getElementById(id)
+		2.getElementsByName(name):只能用于input标签
+		3.getElementsByTagName(tagName)
+		4.通过节点导航拿到
+	
+	节点替换操作
+		1. replaceNode(node) //不推荐，兼容性不好
+		2. parentNode.replaceChild(node1,node2)
+	节点克隆操作
+		1. cloneNode(bool) bool:是否拷贝所有内容包括子节点和属性等
+	节点创建操作
+		1. document.createElement("name")  name:标签名
+		2. new name() name:标签名
+		3. 通过innerHTML 添加标签   //不建议，兼容性不好
+	节点添加操作
+		1. appendChild(node) 添加标签节点
+		2. setAttribute(att) 添加一个属性节点
+	节点删除操作
+		1. removeChild(node)
+		
+	实例：
+		1.练习表格添加和删除
+		2.全选和全不选，反选
+
+二七：JavaScript模拟类
+		1.对象的创建
+			1.new 函数名()
+			2.new Object()
+			3.json格式定义
+		2.定义私有属性
+			函数中：var 属性名定义
+			函数外：对象.属性名  定义属性名
+		3.定义共有属性
+			函数中：this.属性名 定义属性名
+			函数外：函数名.prototype.属性名 
+		4.定义私有方法
+			函数中：var 方法名 = function(){}
+			函数外：对象.prototyoe.方法名 = function(){}
+		5.定义共有方法
+			函数中：this.方法名 = function(){}
+			函数外：函数名.prototype.方法名 = function(){}
+		6.静态属性和方法都用函数名来定义。调用的时候只能用函数名来调用，不能使用对象调用
+		7.构造函数(有参，无参)：注意函数不能重名
+
+
+
+
