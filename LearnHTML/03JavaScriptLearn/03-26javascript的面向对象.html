@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>模拟类联系</title>
+</head>
+<body>
+	<script type="text/javascript">
+		/*----------对象的创建------------------*/
+		//第一种方法: new + 方法名()
+		function Person() {
+			this.name = "张三"
+		}
+		var p1 = new Person();
+		//第二种方法：new + Object()
+		var p2 = new Object();
+		p2.name = "李四";
+		//第三种方法：json
+		var p3 = {"a":"王五","b":"邓六"};
+
+		/*----------对象的属性（这里只讨论使用new + 方法名生成的对象）-----------------------*/
+		function woman () {
+			//1.函数内使用var定义私有属性
+			var name = "刘七"
+			//2.函数内使用this使用公有属性	
+			this.age = 18;
+		}
+		var w1 = new woman();
+		//3.使用 对象.属性 设置私有属性
+		w1.weight = 180;
+		//4.使用函数名.prototype.属性 设置共有属性
+		woman.prototype.jj = 200;
+		var w2 = new woman();
+
+		/*----------对象的方法（这里只讨论使用new + 方法名生成的对象）----------*/
+		function man () {
+			//1.函数内部使用var 来定义私有方法
+			var eat = function eatAction () {
+				alert("eat");
+			}
+			//2.函数内部使用tihs 来定义共有方法
+			this.jump = function jumpAction () {
+				alert("jump");
+			}
+		}
+		//3.使用 对象.方法名 设置私有方法
+		var m1 = new man();
+		m1.run = function runAction () {
+			alert("run");
+		}
+		//4.使用 函数名.prototype.方法名 设置共有方法
+		man.prototype.cray = function crayAction () {
+			alert("cray");
+		}
+		var m2 = new man();
+		
+		/*-----------静态方法的创建及调用--------------------*/
+		function dog () {
+		}
+		//静态方法使用 函数名.方法名 创建
+		dog.show = function showAction () {
+			alert("showAction");
+		}
+		var d1 = new dog();
+
+		function onclickAction () {
+			/*----------模拟类的创建测试------------------*/
+			// alert(p1.name);
+			// alert(p2.name);
+			// alert(p3["a"]+"---"+p3.b);
+			/*----------类的属性（这里只讨论使用new + 方法名生成的对象）-----------------------*/
+			// alert(w2.name); //打印：undefined  var只能定义私有属性，是访问不到的
+			// alert(w2.age); //打印：18;
+			// alert(w2.weight);; //打印：undefined 函数外给单独一个对象设置私有属性可以  但是其他对象是访问不到的
+			// alert(w2.jj); //打印：200
+			/*----------类的方法（这里只讨论使用new + 方法名生成的对象）----------*/
+			// m2.eat(); //无法执行，私有方法无法调用
+			// m2.jump();//可执行
+			// m2.run();//无法执行，私有方法无法调用
+			// m2.cray();//可执行
+			/*-----------静态方法的创建及调用--------------------*/
+			// dog.show();//可执行
+			// d1.show();//无法执行，对象调用不了静态方法
+
+		}
+	</script>
+</body>
+	<input type="button" value="点击" onclick="onclickAction()">
+</html>
